@@ -4,7 +4,9 @@
       
 
       <div class="row" >
-        <div class="offset-sm-2 col-sm-8">
+        <div class="offset-sm-2 col-sm-8" >
+          <div style="overflow:scroll;">
+
     <form
       action
       @submit.prevent="aksi == 'insert' ? insert() : aksi == 'update' ? update() : remove() "
@@ -111,7 +113,9 @@
               <td class='text-uppercase text-sm'>Keterangan Tempat</td>
               <td>&nbsp;:&nbsp;</td>
               <td style="width:90%;padding-bottom:5px;">
+                <div style="overflow:scroll;width:100vw;">
                  <wysiwyg v-model='vdata.deskripsi' :options="{image: {  uploadURL: 'https://upload.egov.balangankab.go.id/upload4.php',  dropzoneOptions: {}}}"/>
+                </div>
               </td>
             </tr>
 
@@ -151,6 +155,7 @@
             </div>
       <!-- SUBMIT -->
     </form>
+          </div>
     <div class="text-center" v-if="aksi!='insert'">
   <br>
       <button type="button" @click="aksi='insert';vdata={};this.$forceUpdate()" class="btn btn-sm btn-dark  ">Insert</button>

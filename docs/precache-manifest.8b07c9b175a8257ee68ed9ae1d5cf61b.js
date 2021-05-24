@@ -52,7 +52,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/chunk-af48f40c.78b9cff2.css"
   },
   {
-    "revision": "e384ca0f7494aef4ee66",
+    "revision": "e28d44b7f87d27d4da39",
     "url": "css/chunk-dee2c830.edd1f48c.css"
   },
   {
@@ -84,7 +84,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/page-acara~3974f877.7a099767.css"
   },
   {
-    "revision": "fe4671db65444e973018",
+    "revision": "35a254e0e0ffdb584ff8",
     "url": "css/page-admin-kategori-menu-list_item~21833f8f.d14bf913.css"
   },
   {
@@ -136,7 +136,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/kopdiskominfo.bdcc1330.png"
   },
   {
-    "revision": "8aa28bc71fbc9031f7c2538457c998c0",
+    "revision": "a43564f8bab146829fd623a8aa099ba5",
     "url": "index.html"
   },
   {
@@ -176,8 +176,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/app~df562bea.245b72c3.js"
   },
   {
-    "revision": "53f15dd101918df02448",
-    "url": "js/app~e2550e02.98cb0ca7.js"
+    "revision": "382bced7a2baadc4799a",
+    "url": "js/app~e2550e02.5c4fef06.js"
   },
   {
     "revision": "649e2acdc3f49691dd6b",
@@ -188,8 +188,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/chunk-af48f40c.b592efc7.js"
   },
   {
-    "revision": "e384ca0f7494aef4ee66",
-    "url": "js/chunk-dee2c830.0b3a3bd3.js"
+    "revision": "e28d44b7f87d27d4da39",
+    "url": "js/chunk-dee2c830.e900624c.js"
   },
   {
     "revision": "9edeb7fffd3a5742002d",
@@ -376,8 +376,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/page-admin-acara~page-admin-kategori-menu-index~page-admin-kategori-menu-list_item~page-admin-konten~eff8c636.b6099342.js"
   },
   {
-    "revision": "1ab3c45f58615e564b84",
-    "url": "js/page-admin-index~3d9b8e9e.94eaf304.js"
+    "revision": "46c646ba33deffcb2ac5",
+    "url": "js/page-admin-index~3d9b8e9e.76d47af9.js"
   },
   {
     "revision": "82a7346d7a5bc321a2c8",
@@ -388,8 +388,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "js/page-admin-kategori-menu-index~eb1e1906.f9d4a854.js"
   },
   {
-    "revision": "fe4671db65444e973018",
-    "url": "js/page-admin-kategori-menu-list_item~21833f8f.f22157f7.js"
+    "revision": "35a254e0e0ffdb584ff8",
+    "url": "js/page-admin-kategori-menu-list_item~21833f8f.a7b8b5d6.js"
   },
   {
     "revision": "661e2c02c4689148f940",

@@ -40,7 +40,7 @@
              class="d-inline" style="height:30px;width:20px;filter: brightness(0) invert(1);" alt="">
     </button>
     </div>
-    <div style="min-height:50vh;width:100vw;padding:50px;" @click="menu=false">
+    <div style="min-height:50vh;width:100vw;" @click="menu=false">
             <router-view></router-view>
     </div>
     
