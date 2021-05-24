@@ -1,0 +1,226 @@
+<template>
+  <div>
+     <div v-if="$store.state.busy">
+      <div style="position:fixed;height:100vh;width:100vw;background: rgb(8,34,11);
+background: linear-gradient(90deg, rgba(8,34,11,0.5522584033613445) 3%, rgba(1,11,2,0.5046393557422969) 98%);position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);z-index:100;">
+        <p class="font-bold text-2xl text-red animated bounce infinite" style="position: absolute;top: 50%;left: 30%;transform: translateX(-50%) translateY(-50%);z-index:100;" >LOADING ...</p>
+      </div>
+    </div>
+    <!--
+    <router-view style="z-index:10" v-myimage v-reload />-->
+    <router-view></router-view>
+  </div>
+</template>
+<script>
+import autophp from '@/plugins/autophp.js'
+let sdb = new autophp()
+export default {
+  data() {
+    return {
+      test: 1,
+      bearer: "",
+      busy: false // digunakan untuk melihat apakah ada data yang masih diprocess untuk dimunculkan loading
+    };
+  },
+  methods: {
+  },
+  mounted() {
+    let that = this;
+    function idleLogout() {
+      var t;
+      window.onload = resetTimer;
+      window.onmousemove = resetTimer;
+      window.onmousedown = resetTimer; // catches touchscreen presses as well
+      window.ontouchstart = resetTimer; // catches touchscreen swipes as well
+      window.onclick = resetTimer; // catches touchpad clicks as well
+      window.onkeypress = resetTimer;
+      window.addEventListener("scroll", resetTimer, true); // improved; see comments
+      function yourFunction() {
+        db.collection('users').doc(that.$store.state.users.uid).set({active:"idle"},{merge:true}).then(res=>{
+          console.log("user idle")
+        })
+        // your function for too long inactivity goes here
+        // e.g. window.location.href = 'logout.php';
+      }
+
+      function resetTimer() {
+        clearTimeout(t);
+        t = setTimeout(yourFunction, 50000); // time is in milliseconds
+      }
+    }
+    //! idleLogout();
+    window.addEventListener("scroll", function(event) {
+      var scroll = this.scrollY;
+      //gunakan scroll untuk mendeteksi nilai position
+    });
+    // !WOW JS
+    // !FCM
+     document.addEventListener(
+      "deviceready",
+      function() {
+        var push = PushNotification.init({
+          android: {
+            senderID: "494678481790", // setting project firebase
+            sound: "true",
+            vibrate: "true",
+            clearNotifications: true, // clear notifications from shade on app start
+            forceShow: true
+          },
+          ios: {
+            alert: "true",
+            badge: "true",
+            sound: "true"
+          }
+        });
+        PushNotification.createChannel(() => {
+          console.log('success');
+        }, () => {
+          console.log('error');
+        }, {
+          id: "test-channel",
+          description: "My first test channel",
+          importance: 5,
+        vibration: [500, 1000, 500, 500],
+          sound:'test', // test adalah test.wav nama file sound notification
+        });
+        push.on("registration", function(data) {
+          localStorage.setItem("notifid", data.registrationId);
+          that.regis = data.registrationId;
+          that.$forceUpdate()
+          if(this.$store.state.users){
+            // sdb.collection('tbuser').doc().set({id:this.$store.state.users.id,fcm:data.registrationId}).then(res=>{
+            //     console.log(res)
+            // })
+            
+          }
+          // Simpan data.registrationId KE DATABASE DENGAN GANDENGAN ID USER untuk di tembak dengan payload {to : ""} firebase
+        });
+        push.subscribe(
+          'epermit',
+          () => {
+            // alert('success subscribe epermit');
+          },
+          e => {
+            alert('error subscribe epermit');
+            // console.log('error:', e);
+          }
+        );
+        push.on("notification", function(data) {});
+        push.on("error", function(e) {
+          console.log(e.message);
+        });
+      },
+      false
+    );
+    // !END WOW JS
+    // #CORDOVA
+    if (typeof cordova === "object") {
+      document.addEventListener("deviceready", function() {
+        cordova.plugins.backgroundMode.enable();
+        cordova.plugins.backgroundMode.on("EVENT", function() {
+          // apabila status background process berubah maka event ini di jalankan
+        });
+        window.powerManagement.dim(
+          function() {
+            console.log("Wakelock acquired");
+          },
+          function() {
+            console.log("Failed to acquire wakelock");
+          }
+        );
+        cordova.plugins.backgroundMode.setDefaults({
+          title: "HELLO",
+          text: "World",
+          // icon: 'icon' // this will look for icon.png in platforms/android/res/drawable|mipmap
+          // color: "F14F4D", // hex format like 'F14F4D'
+          // resume: true,
+          hidden: true,
+          silent: true
+          // bigText: Boolean
+        });
+        cordova.plugins.notification.local.setDefaults({
+          led: { color: "#FF00FF", on: 500, off: 500 },
+          vibrate: [100, 50, 200]
+        });
+      });
+    }
+    // this.mediaQueries();
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        that.mediaQueries();
+      });
+    });
+    // this.init();
+    setTimeout(() => {
+      this.$store.commit("nossr", true);
+    }, 100);
+    this.$nuxt.$on("busy", data => {
+      this.busy = data;
+    });
+  }
+};
+</script>
+<style>
+.anim {
+  transition: all 0.2s ease-in;
+}
+h1{
+    display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h4 {
+  display: block;
+  font-size: 1em;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+/* width */
+/* ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.712);
+    border-radius: 10px;
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+} */
+</style>

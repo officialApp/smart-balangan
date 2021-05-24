@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "494678481790",
+    "project_id": "kominfobalangan-d2008",
+    "storage_bucket": "kominfobalangan-d2008.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494678481790:android:c2026c98dd2ae2aa00f12f",
+        "android_client_info": {
+          "package_name": "com.kominfobalanganijin.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494678481790-dtfrff82ocf4c7lvji3einuu3bhrkijr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kominfobalanganijin.app",
+            "certificate_hash": "6b619789358609ebf82aea4cab737c97f638ea96"
+          }
+        },
+        {
+          "client_id": "494678481790-it9nrcbl4811c668mfpf6865tfqrovij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHEqbXrzMjywQLIn__m0-0ww9XTD-FmhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494678481790-it9nrcbl4811c668mfpf6865tfqrovij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494678481790:android:00fa9ea84bdda06e00f12f",
+        "android_client_info": {
+          "package_name": "com.officialapp1.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494678481790-it9nrcbl4811c668mfpf6865tfqrovij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHEqbXrzMjywQLIn__m0-0ww9XTD-FmhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494678481790-it9nrcbl4811c668mfpf6865tfqrovij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

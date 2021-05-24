@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.officialapp1.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>officialApp</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <hook src="../node_modules/vue-cli-plugin-cordova/serve-config-hook.js" type="after_prepare" />
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-googleplus" spec="8.1.1">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.494678481790-it9nrcbl4811c668mfpf6865tfqrovij" />
+        <variable name="WEB_APPLICATION_CLIENT_ID" value="494678481790-it9nrcbl4811c668mfpf6865tfqrovij.apps.googleusercontent.com" />
+        <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
+    </plugin>
+    <allow-navigation href="*"/>
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.2" />
+    <plugin name="cordova-plugin-printer" spec="^0.8.0">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="28.+" />
+    </plugin>
+     <plugin name="cordova-plugin-background-geolocation" spec="@mauron85/cordova-plugin-background-geolocation@~3.1.0">
+        <variable name="GOOGLE_PLAY_SERVICES_VERSION" value="17.0.0" />
+        <variable name="ANDROID_SUPPORT_LIBRARY_VERSION" value="26+" />
+        <variable name="ICON" value="@mipmap/ic_launcher" />
+        <variable name="SMALL_ICON" value="@mipmap/ic_launcher" />
+        <variable name="ALWAYS_USAGE_DESCRIPTION" value="App requires background tracking " />
+        <variable name="MOTION_USAGE_DESCRIPTION" value="App requires motion detection" />
+    </plugin>
+    <plugin name="cordova-android-support-gradle-release" spec="^3.0.1">
+        <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
+    </plugin>
+    <platform name="android">
+        <resource-file src="google-services.json" target="app/google-services.json" />
+        <resource-file src="assets/sounds/test.wav" target="app/res/main/raw/test.wav" />
+    </platform>
+    <platform name="android">
+        <!-- <splash density="land-xhdpi" src="res/screen/android/screen-xhdpi-landscape.png" />
+        <splash density="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="SplashScreenSpinnerColor" value="#1C00ff00" /> -->
+        <preference name="SplashScreenDelay" value="0"/>
+    </platform>
+     <platform name="android">
+        <icon src="assets/ic_launcher.png" />
+        <resource-file src="assets/ic_launcher.png" target="app/src/main/res/mipmap/icon.png" />
+    </platform>
+    <platform name="android">
+        <icon density="xhdpi" src="../src/static/icon.png" />
+    </platform>
+    <plugin name="cordova-plugin-fullscreen" spec="^1.2.0" />
+    <plugin name="phonegap-plugin-push" spec="^2.3.0">
+        <variable name="ANDROID_SUPPORT_V13_VERSION" value="27.+" />
+        <variable name="FCM_VERSION" value="17.0.+" />
+    </plugin>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
